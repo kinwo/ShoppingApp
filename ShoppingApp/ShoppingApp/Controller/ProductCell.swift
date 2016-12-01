@@ -1,6 +1,6 @@
 //
 //  ProductCell.swift
-//  ShoppingCartTest
+//  ShoppingApp
 //
 //  Created by Sumit on 01/12/16.
 //  Copyright © 2016 Sumit. All rights reserved.
@@ -20,7 +20,6 @@ class ProductCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    
     //MARK: Public Method
     
     func assignProduct(product: Product) {
@@ -28,6 +27,10 @@ class ProductCell: UITableViewCell {
         self.imageViewProduct.sd_setImage(with:productImageURL as! URL, placeholderImage: UIImage(named: "product1"))
         self.labelProductTitle.text = product.productName;
         self.labelProductPrice.text = String(format: "$ \(product.amount)")
-        self.labelPurchased.isHidden = true
+        if !product.isPaid {
+            self.labelPurchased.isHidden = true
+        }else{
+            self.labelPurchased.isHidden = false
+        }
     }
 }

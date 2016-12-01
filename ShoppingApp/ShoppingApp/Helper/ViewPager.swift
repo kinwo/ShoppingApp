@@ -1,6 +1,6 @@
 //
 //  ViewPager.swift
-//  ViewPager
+//  ShoppingApp
 //
 //  Created by Septiyan Andika on 6/26/16.
 //  Copyright © 2016 sailabs. All rights reserved.
@@ -142,7 +142,6 @@ open class ViewPager: UIView {
         
         setFrameForView(view!, index: index);
         
-        
         if(itemViews[index] == nil){
             itemViews[index] = view
             let tap = UITapGestureRecognizer(target: self, action:  #selector(self.handleTapSubView))
@@ -153,7 +152,6 @@ open class ViewPager: UIView {
         }else{
             itemViews[index] = view
         }
-        
     }
     
     func handleTapSubView() {

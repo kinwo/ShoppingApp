@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products View Controller-->
+        <!--Product List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProductsViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9xZ-ur-tad" id="Vuk-8s-U7L">
-                                            <frame key="frameInset" width="375" height="148"/>
+                                            <frame key="frameInset" width="375" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-xs-Ak8">
@@ -93,7 +93,7 @@
                             <constraint firstItem="NKJ-An-Lce" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yqt-rr-QeA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2hQ-0O-hSp"/>
+                    <navigationItem key="navigationItem" title="Product List" id="2hQ-0O-hSp"/>
                     <connections>
                         <outlet property="tableView" destination="NKJ-An-Lce" id="6aO-Zc-yl9"/>
                     </connections>
@@ -156,10 +156,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oB-LU-7Q1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="XfQ-4F-VIC"/>
+                                    <constraint firstAttribute="width" constant="42" id="dE8-Hr-Lpc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lyZ-Ol-0so" firstAttribute="top" secondItem="wa3-Kp-NH8" secondAttribute="bottom" constant="7" id="4sY-Uv-RRi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1oB-LU-7Q1" secondAttribute="trailing" constant="1" id="57E-xE-Er6"/>
                             <constraint firstAttribute="trailing" secondItem="m2b-pg-DMt" secondAttribute="trailing" id="Hcl-bQ-IVr"/>
                             <constraint firstItem="wa3-Kp-NH8" firstAttribute="leading" secondItem="Fwz-TQ-1Pr" secondAttribute="leadingMargin" id="MY0-at-aZj"/>
                             <constraint firstItem="S4D-4T-VLb" firstAttribute="top" secondItem="lyZ-Ol-0so" secondAttribute="bottom" constant="8" id="NJf-ua-fC2"/>
@@ -167,6 +177,7 @@
                             <constraint firstItem="lyZ-Ol-0so" firstAttribute="leading" secondItem="Fwz-TQ-1Pr" secondAttribute="leadingMargin" id="XGy-Zk-k7P"/>
                             <constraint firstItem="wa3-Kp-NH8" firstAttribute="top" secondItem="m2b-pg-DMt" secondAttribute="bottom" constant="4" id="XNr-2j-itE"/>
                             <constraint firstItem="jQr-wQ-1Lu" firstAttribute="top" secondItem="Vvb-Gi-C4H" secondAttribute="bottom" constant="8" id="YUh-7c-8l5"/>
+                            <constraint firstItem="1oB-LU-7Q1" firstAttribute="top" secondItem="Vvb-Gi-C4H" secondAttribute="bottom" constant="25" id="onQ-MQ-Qz9"/>
                             <constraint firstItem="50G-1k-kyZ" firstAttribute="top" secondItem="S4D-4T-VLb" secondAttribute="bottom" constant="8" id="rP5-PT-MbG"/>
                             <constraint firstItem="m2b-pg-DMt" firstAttribute="top" secondItem="jQr-wQ-1Lu" secondAttribute="bottom" constant="8" id="tVV-ao-2uF"/>
                             <constraint firstItem="wa3-Kp-NH8" firstAttribute="trailing" secondItem="Fwz-TQ-1Pr" secondAttribute="trailingMargin" id="vMg-cc-psa"/>
@@ -178,12 +189,15 @@
                     </view>
                     <connections>
                         <outlet property="buttonBuyNow" destination="S4D-4T-VLb" id="kCA-6D-jua"/>
+                        <outlet property="labelPaid" destination="1oB-LU-7Q1" id="Onf-Fr-NSz"/>
+                        <outlet property="labelPrice" destination="lyZ-Ol-0so" id="52I-tE-3rj"/>
+                        <outlet property="labelProductName" destination="wa3-Kp-NH8" id="4wt-so-lql"/>
                         <outlet property="viewPager" destination="jQr-wQ-1Lu" id="upl-It-nw0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwm-TY-JCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="121.47887323943662"/>
+            <point key="canvasLocation" x="1620" y="120.98950524737631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5AS-Tl-OBN">
