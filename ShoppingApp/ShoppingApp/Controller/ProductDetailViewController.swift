@@ -73,6 +73,7 @@ extension ProductDetailViewController:ViewPagerDataSource{
             imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: viewPager.frame.width, height:  viewPager.frame.height - 20))
             let productImageURL = NSURL.init(string: self.product.imageName.object(at: index) as! String)
             imageView.sd_setImage(with: productImageURL as URL!)
+            imageView.contentMode = .scaleAspectFit
             newView?.addSubview(imageView)
         }else{
             label = newView?.viewWithTag(1) as? UILabel
