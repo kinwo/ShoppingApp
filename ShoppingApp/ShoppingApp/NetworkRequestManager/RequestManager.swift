@@ -8,14 +8,16 @@
 
 import Foundation
 
-class RequestManager: NSObject {
+let RequestManager = RequestManagerStruct()
+
+struct RequestManagerStruct {
     
-    class func getProducts( serviceResponse:@escaping (_ response: NSArray?,_ error: NSError?)-> Void) {
-        ProductInterface().getProductsWithRequest(productRequest: ProductRequest()) { (response, error) in
+    func getProducts( serviceResponse:@escaping (_ response: [Product]?, _ error: NSError?)-> Void) {
+        ProductInterface.getProductsWithRequest(productRequest: ProductRequest()) { (response, error) in
             //TODO: Network check
             if error == nil {
                 serviceResponse(response, error)
-            }else {
+            } else {
                 //Do some additional work
                 serviceResponse(nil, error)
             }
