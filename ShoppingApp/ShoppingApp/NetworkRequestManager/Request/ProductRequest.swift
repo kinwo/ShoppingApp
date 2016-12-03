@@ -8,13 +8,13 @@
 
 import Foundation
 
-class ProductRequest: NSObject {
+struct ProductRequest {
     
-    var fileUrl : String = "";
-    var params : NSDictionary = NSDictionary()
+    var fileUrl = ""
+    var params = [String: Any]()
     
-    override init() {
-        self.fileUrl = "Some url...."
+    init() {
+        fileUrl = "Some url...."
 //        params = @{} //Some params
     }
 }

@@ -8,25 +8,22 @@
 
 import Foundation
 
-class ProductInterface: NSObject {
+let ProductInterface = ProductInterfaceStruct()
+
+struct ProductInterfaceStruct {
     
-    override init() {
-    }
-    
-    func getProductsWithRequest(productRequest: ProductRequest, serviceResponse:@escaping (_ response: NSArray?,_ error: NSError?)-> Void) {
+    func getProductsWithRequest(productRequest: ProductRequest, serviceResponse:@escaping (_ response: [Product]?,_ error: NSError?)-> Void) {
         APIInteractor.getProductsWithRequest(serviceResponse: { (response, error) in
-            if error == nil {
-                let productList: NSMutableArray = NSMutableArray();
-                if (response?.count)! > 0 {
-                    let arrayResponse = response! as NSArray
-                    for i in 0  ..< arrayResponse.count  {
-                        let productDictionary:NSDictionary = arrayResponse.object(at: i) as! NSDictionary
-                        productList.add(Product.getProductWithDictionary(productDictionary: productDictionary))
-                    }
+            if let arrayResponse = response {
+                let productList = arrayResponse.reduce([Product]()) { (accumProductList, productDictionary) in
+                    var mutableProduct = accumProductList
+                    mutableProduct.append(Product.getProductWithDictionary(productDictionary: productDictionary))
+                    return mutableProduct
                 }
-                serviceResponse(productList as NSMutableArray?, nil)
-            }else {
-                return serviceResponse(nil, error as NSError?)
+                
+                serviceResponse(productList, nil)
+            } else {
+                serviceResponse(nil, error!)
             }
         });
     }
