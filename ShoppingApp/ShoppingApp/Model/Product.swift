@@ -8,32 +8,30 @@
 
 import Foundation
 
-let kProductName = "productName"
-let kAmount = "amount"
-let kImageName = "imageName"
-let kIspaid = "ispaid"
+private let kProductName = "productName"
+private let kAmount = "amount"
+private let kImageName = "imageName"
+private let kIspaid = "ispaid"
 
-
-
-class Product: NSObject {
-    var productName : String = ""
-    var imageName : NSArray = NSArray()
-    var amount : Float = 0.0
-    var isPaid : Bool = false
+class Product {
+    var productName = ""
+    var imageName = [String]()
+    var amount = 0.0
+    var isPaid = false
     
-    override init() {
+    init() {
         
     }
     
-    init(withProductDetails productName: String, imageName: NSArray, amount: Float, isPaid: Bool) {
+    init(withProductDetails productName: String, imageName: [String], amount: Double, isPaid: Bool) {
         self.productName = productName
         self.imageName = imageName
         self.amount = amount
         self.isPaid = isPaid
     }
     
-    class func getProductWithDictionary(productDictionary: NSDictionary) -> Product {
-        let productObject :Product = Product.init(withProductDetails: productDictionary[kProductName] as! String, imageName: productDictionary[kImageName] as! NSArray, amount: productDictionary[kAmount] as! Float, isPaid: productDictionary[kIspaid] as! Bool)
+    class func getProductWithDictionary(productDictionary: [String: Any]) -> Product {
+        let productObject :Product = Product.init(withProductDetails: productDictionary[kProductName] as! String, imageName: productDictionary[kImageName] as! [String], amount: productDictionary[kAmount] as! Double, isPaid: productDictionary[kIspaid] as! Bool)
         return productObject
     }
 }
