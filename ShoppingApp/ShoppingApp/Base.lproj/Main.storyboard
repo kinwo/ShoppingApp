@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-xs-Ak8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product1" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-xs-Ak8">
                                                     <rect key="frame" x="23" y="10.5" width="116" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="116" id="0tj-OC-NOo"/>
@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="width" constant="219" id="c2K-xY-L91"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" backgroundImage="buy_now_button.png">
+                                <state key="normal" backgroundImage="buy_now_button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -233,7 +233,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buy_now_button.png" width="1338" height="389"/>
-        <image name="product1.jpg" width="363" height="290"/>
+        <image name="buy_now_button" width="669" height="194"/>
+        <image name="product1" width="181" height="145"/>
     </resources>
 </document>
