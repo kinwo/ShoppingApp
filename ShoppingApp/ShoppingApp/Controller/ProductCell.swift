@@ -16,21 +16,15 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var labelProductPrice: UILabel!
     @IBOutlet weak var labelPurchased: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     //MARK: Public Method
     
     func assignProduct(product: Product) {
-        let productImageURL = NSURL.init(string: product.imageName.object(at: 0) as! String)
-        self.imageViewProduct.sd_setImage(with:productImageURL as! URL, placeholderImage: UIImage(named: "product1"))
         self.labelProductTitle.text = product.productName;
         self.labelProductPrice.text = String(format: "$ \(product.amount)")
-        if !product.isPaid {
-            self.labelPurchased.isHidden = true
-        }else{
-            self.labelPurchased.isHidden = false
+        self.labelPurchased.isHidden = !product.isPaid
+        
+        if let productImageURL = URL(string: product.imageName[0]) {
+            self.imageViewProduct.sd_setImage(with:productImageURL, placeholderImage: UIImage(named: "product1"))
         }
     }
 }
