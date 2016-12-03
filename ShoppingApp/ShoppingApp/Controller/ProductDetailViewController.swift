@@ -18,21 +18,20 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var viewPager: ViewPager!
     @IBOutlet weak var labelProductName: UILabel!
     @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var labelPaid: UILabel!
     
     var delegate : ProductDetailDelegate?
-    var selctedProductIndex : Int = 0
-    var product : Product = Product()
-    @IBOutlet weak var labelPaid: UILabel!
+    var selctedProductIndex = 0
+    var product = Product()
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewPager.dataSource = self;
+        viewPager.dataSource = self
         
-        self.labelProductName.text = self.product.productName
-        self.labelPrice.text = String(format: "$ \(self.product.amount)")
-        self.buttonBuyNow.isUserInteractionEnabled = self.product.isPaid ? false : true;
-        self.labelPaid.isHidden = self.product.isPaid ? false : true;
-       
+        labelProductName.text = product.productName
+        labelPrice.text = String(format: "$ \(product.amount)")
+        buttonBuyNow.isUserInteractionEnabled = !product.isPaid
+        labelPaid.isHidden = !product.isPaid
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,13 +39,7 @@ class ProductDetailViewController: UIViewController {
         viewPager.scrollToPage(0)
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     //MARK: ButtonActionMethod
-    
     @IBAction func buyButtonTapped(_ sender: AnyObject) {
         self.buttonBuyNow.isUserInteractionEnabled = false
         self.product.isPaid = true
@@ -56,31 +49,32 @@ class ProductDetailViewController: UIViewController {
 }
 
 //MARK: Extention Method of ViewPager
-
 extension ProductDetailViewController:ViewPagerDataSource{
     func numberOfItems(_ viewPager:ViewPager) -> Int {
-        return self.product.imageName.count;
+        return product.imageName.count
     }
     
     func viewAtIndex(_ viewPager:ViewPager, index:Int, view:UIView?) -> UIView {
-        var newView = view;
         var imageView : UIImageView
-        var label:UILabel?
-        if(newView == nil){
-            newView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height:  self.view.frame.height))
-            newView!.backgroundColor = UIColor.white
-            
-            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: viewPager.frame.width, height:  viewPager.frame.height - 20))
-            let productImageURL = NSURL.init(string: self.product.imageName.object(at: index) as! String)
-            imageView.sd_setImage(with: productImageURL as URL!)
-            imageView.contentMode = .scaleAspectFit
-            newView?.addSubview(imageView)
-        }else{
-            label = newView?.viewWithTag(1) as? UILabel
-        }
-        label?.text = "Page View Pager  \(index+1)"
+        let finalView: UIView
         
-        return newView!
+        if let view = view, let label = view.viewWithTag(1) as? UILabel {
+            label.text = "Page View Pager  \(index+1)"
+            finalView = view
+        } else {
+            let newView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height:  self.view.frame.height))
+            newView.backgroundColor = .white
+            
+            if let productImageURL = URL.init(string: product.imageName[index]) {
+                imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: viewPager.frame.width, height:  viewPager.frame.height - 20))
+                imageView.sd_setImage(with: productImageURL)
+                imageView.contentMode = .scaleAspectFit
+                newView.addSubview(imageView)
+            }
+            finalView = newView
+        }
+        
+        return finalView
     }
     
     func didSelectedItem(_ index: Int) {
