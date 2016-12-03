@@ -22,8 +22,6 @@
 		0AA8B54A1DF0B3BB0022CD3B /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B53A1DF0B3BB0022CD3B /* ProductRequest.swift */; };
 		0AA8B54B1DF0B3BB0022CD3B /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B53B1DF0B3BB0022CD3B /* RequestManager.swift */; };
 		0AA8B54C1DF0B3BB0022CD3B /* ProductInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B53D1DF0B3BB0022CD3B /* ProductInterface.swift */; };
-		0AA8B54D1DF0B3BB0022CD3B /* buy_now_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AA8B53F1DF0B3BB0022CD3B /* buy_now_button.png */; };
-		0AA8B54E1DF0B3BB0022CD3B /* product1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AA8B5401DF0B3BB0022CD3B /* product1.jpg */; };
 		0AA8B54F1DF0B4250022CD3B /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8B52D1DF0B3BB0022CD3B /* ProductDetailViewController.swift */; };
 		8615C90F693E74D2743CFB49 /* Pods_ShoppingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C68176723D67B724B1A8BD /* Pods_ShoppingApp.framework */; };
 /* End PBXBuildFile section */
@@ -47,8 +45,6 @@
 		0AA8B53A1DF0B3BB0022CD3B /* ProductRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
 		0AA8B53B1DF0B3BB0022CD3B /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		0AA8B53D1DF0B3BB0022CD3B /* ProductInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInterface.swift; sourceTree = "<group>"; };
-		0AA8B53F1DF0B3BB0022CD3B /* buy_now_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy_now_button.png; sourceTree = "<group>"; };
-		0AA8B5401DF0B3BB0022CD3B /* product1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product1.jpg; sourceTree = "<group>"; };
 		15C68176723D67B724B1A8BD /* Pods_ShoppingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B5A7231A1EAFD6BAAE9186 /* Pods-ShoppingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2456FEF035057E7C0A0FA44 /* Pods-ShoppingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingApp/Pods-ShoppingApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,8 +164,6 @@
 		0AA8B53E1DF0B3BB0022CD3B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				0AA8B53F1DF0B3BB0022CD3B /* buy_now_button.png */,
-				0AA8B5401DF0B3BB0022CD3B /* product1.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -256,8 +250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A52B32E1DF07B980077A805 /* LaunchScreen.storyboard in Resources */,
-				0AA8B54E1DF0B3BB0022CD3B /* product1.jpg in Resources */,
-				0AA8B54D1DF0B3BB0022CD3B /* buy_now_button.png in Resources */,
 				0AA8B5441DF0B3BB0022CD3B /* ProductList.json in Resources */,
 				0A52B32B1DF07B980077A805 /* Assets.xcassets in Resources */,
 				0A52B3291DF07B980077A805 /* Main.storyboard in Resources */,
